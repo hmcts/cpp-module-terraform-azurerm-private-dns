@@ -10,22 +10,19 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.19.1 |
+| <a name="provider_local"></a> [local](#provider\_local) | 2.2.3 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_tag_set"></a> [tag\_set](#module\_tag\_set) | git::https://github.com/hmcts/cpp-module-terraform-azurerm-tag-generator.git | main |
+| <a name="module_azure_private_dns_terratest"></a> [azure\_private\_dns\_terratest](#module\_azure\_private\_dns\_terratest) | ../ | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [azurerm_private_dns_a_record.this](https://registry.terraform.io/providers/hashicorp/azurerm/3.19.1/docs/resources/private_dns_a_record) | resource |
-| [azurerm_private_dns_cname_record.this](https://registry.terraform.io/providers/hashicorp/azurerm/3.19.1/docs/resources/private_dns_cname_record) | resource |
-| [azurerm_private_dns_zone.zone](https://registry.terraform.io/providers/hashicorp/azurerm/3.19.1/docs/resources/private_dns_zone) | resource |
-| [azurerm_private_dns_zone_virtual_network_link.vnet_link](https://registry.terraform.io/providers/hashicorp/azurerm/3.19.1/docs/resources/private_dns_zone_virtual_network_link) | resource |
+| [local_file.dev-dns-configuration](https://registry.terraform.io/providers/hashicorp/local/latest/docs/data-sources/file) | data source |
 
 ## Inputs
 
