@@ -1,11 +1,11 @@
 output "a_record" {
   description = "The name of the Resource Group"
-  value       = { for record in var.a_recordsets : record.name => record }
+  value       = azurerm_private_dns_a_record.this
 }
 
 output "cname_record" {
   description = "The name of the Resource Group"
-  value       = { for record in var.cname_records : record.name => record }
+  value       = azurerm_private_dns_cname_record.this
 }
 
 output "private_dns_zone" {
