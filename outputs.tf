@@ -10,5 +10,5 @@ output "cname_record" {
 
 output "private_dns_zone" {
   description = "The name of the Resource Group"
-  value       = azurerm_private_dns_zone.zone.0.name
+  value       = var.create_zone ? azurerm_private_dns_zone.zone.0.name : ""
 }
