@@ -1,3 +1,8 @@
+output "id" {
+  description = "DNS Zone ID"
+  value       = var.create_zone ? azurerm_private_dns_zone.zone.0.id : ""
+}
+
 output "a_record" {
   description = "The name of the Resource Group"
   value       = azurerm_private_dns_a_record.this
