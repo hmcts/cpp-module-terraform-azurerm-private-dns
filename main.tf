@@ -22,7 +22,7 @@ resource "azurerm_private_dns_zone" "zone" {
   count               = var.create_zone == true ? 1 : 0
   name                = var.zone_name
   resource_group_name = var.resource_group_name
-  tags                = module.tag_set.tags
+  tags                = var.tags
 }
 
 locals {
@@ -37,17 +37,5 @@ resource "azurerm_private_dns_zone_virtual_network_link" "vnet_link" {
   private_dns_zone_name = local.zone
   virtual_network_id    = each.value.vnet_id
   registration_enabled  = contains(keys(each.value), "registration_enabled") ? each.value.registration_enabled : false
-  tags                  = module.tag_set.tags
-}
-
-module "tag_set" {
-  source         = "git::https://github.com/hmcts/cpp-module-terraform-azurerm-tag-generator.git?ref=main"
-  namespace      = var.namespace
-  application    = var.application
-  costcode       = var.costcode
-  owner          = var.owner
-  version_number = var.version_number
-  attribute      = var.attribute
-  environment    = var.environment
-  type           = var.type
+  tags                  = var.tags
 }
