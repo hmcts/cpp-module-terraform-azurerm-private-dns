@@ -37,5 +37,4 @@ resource "azurerm_private_dns_zone_virtual_network_link" "vnet_link" {
   private_dns_zone_name = local.zone
   virtual_network_id    = each.value.vnet_id
   registration_enabled  = contains(keys(each.value), "registration_enabled") ? each.value.registration_enabled : false
-  tags                  = var.tags
 }
