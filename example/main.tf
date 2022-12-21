@@ -11,12 +11,5 @@ module "azure_private_dns_terratest" {
   zone_name           = yamldecode(data.local_file.dev-dns-configuration.content).name
   vnet_links          = yamldecode(data.local_file.dev-dns-configuration.content).vnet_links
   create_zone         = var.create_zone
-
-  namespace   = var.namespace
-  costcode    = var.costcode
-  attribute   = var.attribute
-  owner       = var.owner
-  environment = var.environment
-  application = var.application
-  type        = var.type
+  tags                = var.tags
 }
